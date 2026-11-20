@@ -22,6 +22,7 @@ import { GameShell } from '../game-sdk/GameShell';
 import { GameCard } from '../components/GameCard';
 import { useStore } from '../store/useStore';
 import { audioManager } from '../game-sdk/AudioManager';
+import { getAssetUrl } from '../utils/assetUrl';
 
 export const GamePage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -149,7 +150,7 @@ export const GamePage: React.FC = () => {
       <div
         className="fixed inset-0 bg-cover bg-center filter blur-3xl opacity-15 pointer-events-none z-0 scale-110"
         style={{
-          backgroundImage: `url('${game.assets?.thumb || `/assets/games/${game.id}/thumb.webp`}')`,
+          backgroundImage: `url('${getAssetUrl(game.assets?.thumb || `/assets/games/${game.id}/thumb.webp`)}')`,
         }}
       />
 
@@ -418,7 +419,7 @@ export const GamePage: React.FC = () => {
                       className="relative aspect-video rounded-xl overflow-hidden glass-card border border-white/10 group cursor-pointer"
                     >
                       <img
-                        src={shot}
+                        src={getAssetUrl(shot)}
                         alt={`${game.title} Action Screenshot ${idx + 1}`}
                         loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

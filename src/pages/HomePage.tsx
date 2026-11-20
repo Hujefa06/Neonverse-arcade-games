@@ -24,6 +24,7 @@ import { CategorySidebar } from '../components/CategorySidebar';
 import { useStore } from '../store/useStore';
 import { audioManager } from '../game-sdk/AudioManager';
 import { GameCategory, GameMetadata } from '../types/game';
+import { getAssetUrl } from '../utils/assetUrl';
 
 export const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -149,7 +150,7 @@ export const HomePage: React.FC = () => {
           <section className="relative w-full rounded-3xl overflow-hidden glass-card border border-neon-cyan/40 shadow-neon-cyan p-6 sm:p-8 transition-all">
             <div
               className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-screen pointer-events-none"
-              style={{ backgroundImage: `url('/assets/bg/hero-cityscape.webp')` }}
+              style={{ backgroundImage: `url('${getAssetUrl('/assets/bg/hero-cityscape.webp')}')` }}
             />
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-neon-cyan/20 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-neon-magenta/20 rounded-full blur-3xl pointer-events-none" />

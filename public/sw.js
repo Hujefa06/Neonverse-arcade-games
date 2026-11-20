@@ -1,9 +1,9 @@
 const CACHE_NAME = 'neonverse-cache-v1';
-const PRECACHE_ASSETS = ['/', '/index.html'];
+const PRECACHE_ASSETS = ['./', './index.html'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_ASSETS))
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_ASSETS).catch(() => {}))
   );
   self.skipWaiting();
 });

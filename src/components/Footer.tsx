@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Gamepad2, Shield, Zap, Sparkles, Heart } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -42,11 +43,11 @@ export const Footer: React.FC = () => {
               Categories
             </div>
             <ul className="space-y-1.5 text-xs text-slate-400">
-              <li><a href="/category/action" className="hover:text-neon-cyan">Action & Runners</a></li>
-              <li><a href="/category/typing" className="hover:text-neon-cyan">Typing Combat</a></li>
-              <li><a href="/category/funny%20physics" className="hover:text-neon-cyan">Funny Physics</a></li>
-              <li><a href="/category/2-player%20co-op" className="hover:text-neon-cyan">2-Player Real Co-Op</a></li>
-              <li><a href="/category/chill%2faesthetic" className="hover:text-neon-cyan">Chill & Aesthetic</a></li>
+              <li><Link to="/category/action" className="hover:text-neon-cyan">Action & Runners</Link></li>
+              <li><Link to="/category/typing" className="hover:text-neon-cyan">Typing Combat</Link></li>
+              <li><Link to="/category/funny%20physics" className="hover:text-neon-cyan">Funny Physics</Link></li>
+              <li><Link to="/category/2-player%20co-op" className="hover:text-neon-cyan">2-Player Real Co-Op</Link></li>
+              <li><Link to="/category/chill%2faesthetic" className="hover:text-neon-cyan">Chill & Aesthetic</Link></li>
             </ul>
           </div>
 

@@ -15,7 +15,7 @@ import { ProfilePage } from './pages/ProfilePage';
 
 export const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="relative min-h-screen bg-[#07080F] text-slate-100 flex flex-col selection:bg-neon-cyan selection:text-black">
         {/* Subtle Ambient Particle Background */}
         <ParticleBackground />

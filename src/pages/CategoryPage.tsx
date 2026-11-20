@@ -4,6 +4,7 @@ import { ArrowLeft, Sparkles } from 'lucide-react';
 import { GAME_REGISTRY, getGamesByCategory } from '../games/registry';
 import { GameCard } from '../components/GameCard';
 import { audioManager } from '../game-sdk/AudioManager';
+import { getAssetUrl } from '../utils/assetUrl';
 
 export const CategoryPage: React.FC = () => {
   const { categoryName } = useParams<{ categoryName: string }>();
@@ -12,16 +13,16 @@ export const CategoryPage: React.FC = () => {
   const filtered = getGamesByCategory(decoded);
 
   const categoryBgMap: Record<string, string> = {
-    action: '/assets/bg/cat-action.webp',
-    arcade: '/assets/bg/cat-arcade.webp',
-    puzzle: '/assets/bg/cat-puzzle.webp',
-    typing: '/assets/bg/cat-typing.webp',
-    'funny physics': '/assets/bg/cat-physics.webp',
-    'chill/aesthetic': '/assets/bg/cat-chill.webp',
-    rhythm: '/assets/bg/cat-rhythm.webp',
-    '2-player co-op': '/assets/bg/cat-coop.webp',
+    action: getAssetUrl('/assets/bg/cat-action.webp'),
+    arcade: getAssetUrl('/assets/bg/cat-arcade.webp'),
+    puzzle: getAssetUrl('/assets/bg/cat-puzzle.webp'),
+    typing: getAssetUrl('/assets/bg/cat-typing.webp'),
+    'funny physics': getAssetUrl('/assets/bg/cat-physics.webp'),
+    'chill/aesthetic': getAssetUrl('/assets/bg/cat-chill.webp'),
+    rhythm: getAssetUrl('/assets/bg/cat-rhythm.webp'),
+    '2-player co-op': getAssetUrl('/assets/bg/cat-coop.webp'),
   };
-  const bgUrl = categoryBgMap[decoded.toLowerCase()] || '/assets/bg/cat-arcade.webp';
+  const bgUrl = categoryBgMap[decoded.toLowerCase()] || getAssetUrl('/assets/bg/cat-arcade.webp');
 
   return (
     <div className="relative space-y-8 pb-16">

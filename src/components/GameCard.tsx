@@ -4,6 +4,7 @@ import { Heart, Users, Play } from 'lucide-react';
 import { GameMetadata } from '../types/game';
 import { useStore } from '../store/useStore';
 import { audioManager } from '../game-sdk/AudioManager';
+import { getAssetUrl } from '../utils/assetUrl';
 
 interface GameCardProps {
   game: GameMetadata;
@@ -65,8 +66,10 @@ export const GameCard: React.FC<GameCardProps> = ({
     ? 'h-48 sm:h-56'
     : 'h-44 sm:h-48';
 
-  const thumbUrl = game.assets?.thumb || `/assets/games/${game.id}/thumb.webp`;
-  const heroUrl = game.assets?.hero || `/assets/games/${game.id}/shot1.webp`;
+  const rawThumb = game.assets?.thumb || `/assets/games/${game.id}/thumb.webp`;
+  const rawHero = game.assets?.hero || `/assets/games/${game.id}/shot1.webp`;
+  const thumbUrl = getAssetUrl(rawThumb);
+  const heroUrl = getAssetUrl(rawHero);
 
   return (
     <div

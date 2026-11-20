@@ -2,6 +2,7 @@
 // Zero-CPU offline AudioBuffer rendering per game seed + 800ms crossfade + dynamic layers
 import { GAME_REGISTRY, getGame } from '../games/registry';
 import { useStore } from '../store/useStore';
+import { getAssetUrl } from '../utils/assetUrl';
 
 export interface GameMusicSeed {
   trackId: string;
@@ -354,9 +355,10 @@ class ProceduralMusicEngine {
     // Check for optional public audio file override: /assets/music/{slug}.mp3
     let buffer: AudioBuffer | null = null;
     try {
-      const fileRes = await fetch(`/assets/music/${gameSlug}.mp3`, { method: 'HEAD' });
+      const audioUrl = getAssetUrl(`/assets/music/${gameSlug}.mp3`);
+      const fileRes = await fetch(audioUrl, { method: 'HEAD' });
       if (fileRes.ok) {
-        const fullRes = await fetch(`/assets/music/${gameSlug}.mp3`);
+        const fullRes = await fetch(audioUrl);
         const arrayBuf = await fullRes.arrayBuffer();
         buffer = await ctx.decodeAudioData(arrayBuf);
       }

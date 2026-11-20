@@ -12,7 +12,7 @@
   <meta name="title" content="NEONVERSE ARCADE — 24 Free Original Browser Games" />
   <meta name="description"
     content="Play 24 original browser games 100% free with synthesized audio, mobile touch & desktop controls, local & cloud saves, and real-time 2-player co-op." />
-  <link rel="manifest" href="/manifest.json" />
+  <link rel="manifest" href="./manifest.json" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -30,7 +30,7 @@
 
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
-  <link rel="preload" as="image" href="/assets/bg/hero-cityscape.webp" type="image/webp" />
+  <link rel="preload" as="image" href="./assets/bg/hero-cityscape.webp" type="image/webp" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
   <script>
     if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').catch(() => { });
+        navigator.serviceWorker.register('./sw.js').catch(() => { });
       });
     }
   </script>
