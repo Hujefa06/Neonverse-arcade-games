@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: rgba(0, 240, 255, 0.15);
+  }
+
+  body {
+    background-color: #07080F;
+    color: #F1F5F9;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Custom Neon Scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B0E1A;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 240, 255, 0.3);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00F0FF;
+  }
+}
+
+@layer utilities {
+  .text-neon-cyan {
+    color: #00F0FF;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  }
+
+  .text-neon-magenta {
+    color: #FF2E9A;
+    text-shadow: 0 0 10px rgba(255, 46, 154, 0.5);
+  }
+
+  .text-neon-violet {
+    color: #7C4DFF;
+    text-shadow: 0 0 10px rgba(124, 77, 255, 0.5);
+  }
+
+  .text-neon-lime {
+    color: #B6FF3C;
+    text-shadow: 0 0 10px rgba(182, 255, 60, 0.5);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(0, 240, 255, 0.18);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(0, 240, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+  }
+
+  .glass-card-magenta:hover {
+    border-color: rgba(255, 46, 154, 0.5);
+    box-shadow: 0 0 20px rgba(255, 46, 154, 0.25);
+  }
+
+  .glass-card-lime:hover {
+    border-color: rgba(182, 255, 60, 0.5);
+    box-shadow: 0 0 20px rgba(182, 255, 60, 0.25);
+  }
+
+  /* 3D tilt perspective container */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+}
